@@ -28,7 +28,8 @@ def main():
         # Process each detected person
         for x1, y1, x2, y2 in person_detections:
             person_crop = frame[y1:y2, x1:x2]
-            gaze_detections = gaze_detector.detect_gaze(person_crop)
+            # Pass the person's bounding box to help determine if they're far away
+            gaze_detections = gaze_detector.detect_gaze(person_crop, (x1, y1, x2, y2))
             
             label = "Unknown"
             if gaze_detections:
