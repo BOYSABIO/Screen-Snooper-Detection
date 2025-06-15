@@ -71,18 +71,21 @@ class AdvancedFeatures:
 
     def play_alert_sound(self):
         """Play an alert sound based on the operating system."""
-        if platform.system() == "Windows":
-            # Use a separate thread for sound to prevent blocking
-            threading.Thread(
-                target=lambda: winsound.Beep(1000, 500),
-                daemon=True
-            ).start()
-        elif platform.system() == "Darwin":
-            if os.path.exists(self.sound_file):
+        current_time = time.time()
+        if (current_time - self.last_notification_time) > self.notification_cooldown:
+            if platform.system() == "Windows":
+                # Use a separate thread for sound to prevent blocking
                 threading.Thread(
-                    target=lambda: mixer.music.play(),
+                    target=lambda: winsound.Beep(1000, 500),
                     daemon=True
                 ).start()
+            elif platform.system() == "Darwin":
+                if os.path.exists(self.sound_file):
+                    threading.Thread(
+                        target=lambda: mixer.music.play(),
+                        daemon=True
+                    ).start()
+            self.last_notification_time = current_time
 
     def show_overlay(self, frame):
         """Show a fullscreen overlay when someone is looking."""

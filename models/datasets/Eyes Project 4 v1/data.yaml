@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 1
+names: ['person']
+
+roboflow:
+  workspace: miguel-d3gfq
+  project: eyes_project_4
+  version: 1
+  license: MIT
+  url: https://universe.roboflow.com/miguel-d3gfq/eyes_project_4/dataset/1

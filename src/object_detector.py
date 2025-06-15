@@ -2,8 +2,9 @@ import cv2
 import torch
 from ultralytics import YOLO
 
+
 class ObjectDetector:
-    def __init__(self, model_path='yolov8n.pt'):
+    def __init__(self, model_path='models/pretrained/best.pt'):
         self.device = self._get_device()
         self.model = YOLO(model_path)
         self.model.to(self.device)
@@ -11,7 +12,9 @@ class ObjectDetector:
     def _get_device(self):
         if torch.cuda.is_available():
             device = "cuda"
-            print(f"Using CUDA for acceleration on GPU: {torch.cuda.get_device_name(0)}")
+            print(
+                f"Using CUDA for acceleration on GPU: {torch.cuda.get_device_name(0)}"
+            )
         elif torch.backends.mps.is_available():
             device = "mps"
             print("Using MPS (Apple Silicon) for acceleration")

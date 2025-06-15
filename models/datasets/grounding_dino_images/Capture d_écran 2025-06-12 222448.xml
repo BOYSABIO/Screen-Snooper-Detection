@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<annotation>
+  <folder>VOC</folder>
+  <filename>Capture d_écran 2025-06-12 222448.png</filename>
+  <source>
+    <database>roboflow.ai</database>
+  </source>
+  <size>
+    <width>1029</width>
+    <height>519</height>
+    <depth>3</depth>
+  </size>
+  <segmented>0</segmented>
+  <object>
+    <name>person</name>
+    <bndbox>
+      <xmin>136</xmin>
+      <ymin>0</ymin>
+      <xmax>937</xmax>
+      <ymax>517</ymax>
+    </bndbox>
+  </object>
+</annotation>

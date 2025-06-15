@@ -125,12 +125,16 @@ class GazeDetector:
                 looking_down = gaze_vector[1] > self.LOOKING_DOWN_THRESHOLD
                 gaze_looking = abs(gaze_vector[0]) < 0.15 and abs(gaze_vector[1]) < 0.08 and not eyes_closed and not looking_down
 
-                # Only use pose detection if person is far
-                looking = gaze_looking
+                # Check both head pose and gaze independently
+                looking = gaze_looking  # Start with gaze detection
                 if use_pose:
                     head_direction, head_tilt = self.calculate_head_pose(landmarks)
                     pose_looking = self.is_looking_at_screen(head_direction, head_tilt)
+                    # Consider it looking if EITHER head is facing forward OR eyes are looking at screen
                     looking = (gaze_looking or pose_looking) and not eyes_closed
+                else:
+                    # If not using pose detection, just use gaze detection
+                    looking = gaze_looking and not eyes_closed
                 
                 # Get smoothed state
                 state = "Watcher" if looking else "Non-Watcher"

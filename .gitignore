@@ -1,4 +1,15 @@
+# Virtual Environment
 *.venv/
+
+# YOLO
 yolo*
-__pycache__/
+
+# Python Cache
+*__pycache__/
+
+# Screenshots
 screenshots/*
+archive/
+
+# Log
+screen_watcher.log

@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<annotation>
+  <folder>VOC</folder>
+  <filename>Screenshot 2025-06-12 at 18.08.03.png</filename>
+  <source>
+    <database>roboflow.ai</database>
+  </source>
+  <size>
+    <width>2940</width>
+    <height>1912</height>
+    <depth>3</depth>
+  </size>
+  <segmented>0</segmented>
+  <object>
+    <name>person</name>
+    <bndbox>
+      <xmin>1276</xmin>
+      <ymin>330</ymin>
+      <xmax>2105</xmax>
+      <ymax>1301</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>person</name>
+    <bndbox>
+      <xmin>51</xmin>
+      <ymin>1083</ymin>
+      <xmax>412</xmax>
+      <ymax>1616</ymax>
+    </bndbox>
+  </object>
+</annotation>
