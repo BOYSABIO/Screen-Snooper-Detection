@@ -168,8 +168,3 @@ python src/main.py
 - Deploy as desktop app or Chrome extension
 
 ---
-
-## Authors
-
-- [Your Name] – Computer Vision Engineer
-- [Teammates] – [Roles]
