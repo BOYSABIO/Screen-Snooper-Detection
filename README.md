@@ -49,7 +49,7 @@ python src/main.py
 - `--advanced`: Enable advanced features (overlay, screenshots, sound alerts)
 - `--model`: Choose between models
   - `basic`: Uses YOLOv8n base model
-  - `trained`: Uses transfer-learned model (default)
+  - `trained`: Uses transfer-learned model (default) yolov11n
 - `--camera`: Specify camera index (default: 0)
 - `--width`: Set camera width (default: 1280)
 - `--height`: Set camera height (default: 720)
@@ -90,7 +90,7 @@ When running with `--advanced`:
 ## Technical Details
 
 The system uses:
-- YOLOv8 for person detection
+- Trained YOLOv11n for object detection
 - MediaPipe for facial landmarks and gaze detection
 - OpenCV for camera handling and visualization
 - PyTorch for model training and inference
