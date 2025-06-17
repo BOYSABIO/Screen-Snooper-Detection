@@ -52,7 +52,7 @@ def main():
     setup_logging()
 
     # Initialize detectors with selected model
-    model_path = 'models/pretrained/yolov8n.pt' if args.model == 'basic' else 'models/pretrained/best.pt'
+    model_path = 'models/pretrained/yolov11n.pt' if args.model == 'basic' else 'models/pretrained/best.pt'
     object_detector = ObjectDetector(model_path=model_path)
     gaze_detector = GazeDetector()
     
